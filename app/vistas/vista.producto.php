@@ -19,11 +19,12 @@ class vistaProducto{
         
         $this->smarty->display('detallesProducto.tpl');
         }
-    function mostrarFormIngreso($cats){
+    function mostrarFormIngreso($cats,$error=null){
         $this->smarty->assign('Nombre',"");
         $this->smarty->assign('Descripcion',"");
         $this->smarty->assign('Precio',"");
         $this->smarty->assign('Marca',"");
+        $this->smarty->assign('Categoria',"");
         $this->smarty->assign('Categorias',$cats);
         $this->smarty->display('formulariomod.tpl');
     }

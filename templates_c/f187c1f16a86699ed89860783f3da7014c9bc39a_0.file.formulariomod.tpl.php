@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-07 02:34:06
+/* Smarty version 4.2.1, created on 2022-10-10 20:06:29
   from 'C:\xampp\htdocs\Tpe Web2\templates\formulariomod.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633f73fee464f4_01658345',
+  'unifunc' => 'content_63445f25cacdd3_48466067',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f187c1f16a86699ed89860783f3da7014c9bc39a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tpe Web2\\templates\\formulariomod.tpl',
-      1 => 1665102835,
+      1 => 1665425180,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_633f73fee464f4_01658345 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63445f25cacdd3_48466067 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <form action="" method="POST" enctype="multipart/form-data">

@@ -14,14 +14,17 @@
         <td>{$categoria->nombre}</td>
         <td>{$categoria->descripcion}</td>
         <td>
-            <a class="btn btn-success" href='modificar-cat/{$categoria->ID}'>
-                modificar 
-            </a>
-            <a class="btn btn-danger" href='borrar-cat/{$categoria->ID}'>
+            
+            {if isset($smarty.session.USER_NAME)}
+              <a class="btn btn-danger" href='borrar-cat/{$categoria->ID}'>
                     eliminar 
-            </a>
+              </a>
+              <a class="btn btn-success" href='modificar-cat/{$categoria->ID}'>
+                modificar 
+              </a>
+            {/if}
             <a class="btn btn-info " href='items-cat/{$categoria->ID}'>
-                    items x cat
+                      items x cat
             </a> 
         </td>
         </tr>

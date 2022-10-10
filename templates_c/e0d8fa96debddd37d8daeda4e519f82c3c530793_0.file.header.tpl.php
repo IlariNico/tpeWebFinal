@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-04 17:28:16
+/* Smarty version 4.2.1, created on 2022-10-10 19:50:36
   from 'C:\xampp\htdocs\Tpe Web2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633c51109b6511_48244828',
+  'unifunc' => 'content_63445b6cc47e78_47241555',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e0d8fa96debddd37d8daeda4e519f82c3c530793' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tpe Web2\\templates\\header.tpl',
-      1 => 1664897285,
+      1 => 1665424235,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633c51109b6511_48244828 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63445b6cc47e78_47241555 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,12 +50,26 @@ function content_633c51109b6511_48244828 (Smarty_Internal_Template $_smarty_tpl)
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="lista-cat">Lista Categorias</a>
                   </li>
+                  <?php if ((isset($_SESSION['USER_NAME']))) {?>
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="agregar-producto">Agregar prod</a>
                   </li>
+                  <?php }?>
+                  <?php if ((isset($_SESSION['USER_NAME']))) {?>
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="agregar-cat">Agregar cat</a>
                   </li>
+                  <?php }?>
+                  <?php if (!(isset($_SESSION['USER_NAME']))) {?>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="login">Login</a>
+                    </li>
+                  <?php } else { ?> 
+                    <li class="nav-item ml-auto">
+                      <a class="nav-link" aria-current="page" href="logout">Logout (<?php echo $_SESSION['USER_NAME'];?>
+)</a>
+                    </li>
+                  <?php }?>
                 </ul>
               </div>
             </div>

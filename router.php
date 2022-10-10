@@ -1,6 +1,7 @@
 <?php
 require_once './app/controladores/controlador.categoria.php';
 require_once './app/controladores/controlador.producto.php';
+require_once './app/controladores/controlador.autenticacion.php';
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
 $action = 'home'; // acción por defecto
@@ -8,18 +9,32 @@ if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }
 
-// parsea la accion Ej: dev/juan --> ['dev', juan]
+// parsea la accion
 $params = explode('/', $action);
 
-// instancio el unico controller que existe por ahora
+session_start();
 $controladorCategorias = new controladorCategoria();
 $controladorProductos = new controladorProducto();
 
+
+
+
 // tabla de ruteo
 switch ($params[0]) {
+    case 'login':
+        $controladorAutenticacion = new ControladorAutenticacion();
+        $controladorAutenticacion->mostrarFormLogin();
+        break;
+    case 'validar':
+        $controladorAutenticacion = new ControladorAutenticacion();
+        $controladorAutenticacion->validarUsuario();
+        break;
     case 'home':
         $controladorProductos->mostrarProductos();
         break;
+    case 'logout':
+        $controladorAutenticacion = new ControladorAutenticacion();
+        $controladorAutenticacion->deslogear();
     case 'list':
         $controladorProductos->mostrarProductos();
         break;
@@ -42,7 +57,6 @@ switch ($params[0]) {
         $controladorProductos->modificarProducto($params[1]);
         break;
     case 'modificar-cat':
-       
         $controladorCategorias->modificarCategoria($params[1]);
         break;
     case 'borrar':

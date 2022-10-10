@@ -10,8 +10,11 @@
                 <p class="card-text">{$producto->descripcion}</p>
                 <div class="d-flex flex-row ocupatodo">
                     <a href="mostrarprod/{$producto->ID}" class="btn btn-primary ">Ver</a>
-                    <a class="btn btn-danger" href='borrar/{$producto->ID}'>Eliminar </a>
-                    <a class="btn btn-success" href='modificar-producto/{$producto->ID}'>Modificar </a>
+                    {if isset($smarty.session.USER_NAME)}
+                        <a class="btn btn-danger" href='borrar/{$producto->ID}'>Eliminar </a>
+                        <a class="btn btn-success" href='modificar-producto/{$producto->ID}'>Modificar </a>
+                    {/if}
+                    
                 </div>
             </div>
         </div>

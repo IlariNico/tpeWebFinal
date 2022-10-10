@@ -1,5 +1,5 @@
 <?php
-
+require_once './app/helpers/helper.autenticacion.php';
 require_once './app/modelos/modelo.producto.php';
 require_once './app/vistas/vista.producto.php';
 require_once './app/modelos/modelo.categoria.php';
@@ -13,6 +13,7 @@ class controladorProducto{
         $this->modelo=new modeloProducto();
         $this->vista=new vistaProducto();
         $this->modeloCat=new modeloCategoria();
+        
     }
 
     function mostrarProductos(){
@@ -50,6 +51,8 @@ class controladorProducto{
     }
 
     function agregarProducto(){    
+        $autHelper = new AutHelper();
+        $autHelper->checkLoggedIn();
         if($this->verificarDatos()){
             $ruta=$this->guardarImgProducto();
             $this->modelo->insertarProducto($_POST,$ruta);
@@ -63,6 +66,8 @@ class controladorProducto{
     }
 
     function borrarProducto($id){
+        $autHelper = new AutHelper();
+        $autHelper->checkLoggedIn();
         if($this->corroborarId($id)){
             $producto=$this->modelo->obtenerProducto($id);
             if($producto!=null){
@@ -103,6 +108,8 @@ class controladorProducto{
     }
 
     function modificarProducto($id){
+        $autHelper = new AutHelper();
+        $autHelper->checkLoggedIn();
         if($this->corroborarId($id)){
             if($this->verificarDatos()){
                     $ruta=$this->guardarImgProducto();

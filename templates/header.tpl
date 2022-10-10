@@ -26,12 +26,25 @@
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="lista-cat">Lista Categorias</a>
                   </li>
+                  {if isset($smarty.session.USER_NAME)}
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="agregar-producto">Agregar prod</a>
                   </li>
+                  {/if}
+                  {if isset($smarty.session.USER_NAME)}
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="agregar-cat">Agregar cat</a>
                   </li>
+                  {/if}
+                  {if !isset($smarty.session.USER_NAME)}
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="login">Login</a>
+                    </li>
+                  {else} 
+                    <li class="nav-item ml-auto">
+                      <a class="nav-link" aria-current="page" href="logout">Logout ({$smarty.session.USER_NAME})</a>
+                    </li>
+                  {/if}
                 </ul>
               </div>
             </div>
