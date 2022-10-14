@@ -17,6 +17,7 @@ class controladorProducto{
     }
 
     function mostrarProductos(){
+        session_start();
         $productos=$this->modelo->obtenerTodosLosProductos();
         $this->vista->mostrarProductos($productos);
     }
@@ -36,6 +37,7 @@ class controladorProducto{
 
 
     function mostrarProductosPorCat($idcat){
+        session_start();
         $productos=$this->modelo->obtenerProductosPorCat($idcat);
         $this->vista->mostrarProductos($productos);
     }
@@ -50,7 +52,8 @@ class controladorProducto{
     (isset($_POST['categoria'])&&!empty($_POST['categoria'])));
     }
 
-    function agregarProducto(){    
+    function agregarProducto(){
+        session_start();    
         $autHelper = new AutHelper();
         $autHelper->checkLoggedIn();
         if($this->verificarDatos()){
@@ -66,6 +69,7 @@ class controladorProducto{
     }
 
     function borrarProducto($id){
+        session_start();
         $autHelper = new AutHelper();
         $autHelper->checkLoggedIn();
         if($this->corroborarId($id)){
@@ -81,6 +85,7 @@ class controladorProducto{
     }
 
     function mostrarProducto($id){
+        
         if($this->corroborarId($id)){
             $producto=$this->modelo->obtenerProducto($id);
             $categoriaProd=$this->modeloCat->obtenerCategoria($producto->id_categoria);
@@ -108,6 +113,7 @@ class controladorProducto{
     }
 
     function modificarProducto($id){
+        session_start();
         $autHelper = new AutHelper();
         $autHelper->checkLoggedIn();
         if($this->corroborarId($id)){

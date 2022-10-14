@@ -8,6 +8,7 @@ class ControladorAutenticacion {
     private $modelo;
     
     public function __construct() {
+        session_start();
         $this->modelo = new ModeloUsuario();
         $this->vista = new VistaAutenticacion();
     }

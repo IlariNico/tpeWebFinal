@@ -1,5 +1,7 @@
 {include file="header.tpl"}
-<form action="" method="POST">
+<form action="{$action}{if isset($id)}
+  /{$id}
+{/if}" method="POST">
   <div class="mb-3">
     <label  class="form-label">Nombre Cat</label>
     <input name="nombre" type="text" class="form-control" value="{$Nombre}">

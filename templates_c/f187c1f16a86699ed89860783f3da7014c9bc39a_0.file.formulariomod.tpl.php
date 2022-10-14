@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-12 21:29:41
+/* Smarty version 4.2.1, created on 2022-10-14 22:52:05
   from 'C:\xampp\htdocs\Tpe Web2\templates\formulariomod.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634715a5467507_38818380',
+  'unifunc' => 'content_6349cbf5b00945_56283827',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f187c1f16a86699ed89860783f3da7014c9bc39a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tpe Web2\\templates\\formulariomod.tpl',
-      1 => 1665602970,
+      1 => 1665780707,
       2 => 'file',
     ),
   ),
@@ -22,29 +22,34 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_634715a5467507_38818380 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6349cbf5b00945_56283827 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
+ <?php if ((isset($_smarty_tpl->tpl_vars['id']->value))) {?>
+  /<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+
+<?php }?>
+  " method="POST" enctype="multipart/form-data">
   <div class="mb-3">
     <label  class="form-label">Nombre Producto</label>
-    <input name="nombre" type="text" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['Nombre']->value;?>
-">
+<input name="nombre" type="text" class="form-control" <?php if ((isset($_smarty_tpl->tpl_vars['Nombre']->value))) {?>value="<?php echo $_smarty_tpl->tpl_vars['Nombre']->value;?>
+"<?php }?>>
   </div>
   <div class="mb-3">
     <label  class="form-label">Descripción</label>
-    <input name="descripcion" type="text" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['Descripcion']->value;?>
-" >
+    <input name="descripcion" type="text" class="form-control" <?php if ((isset($_smarty_tpl->tpl_vars['Nombre']->value))) {?>value="<?php echo $_smarty_tpl->tpl_vars['Descripcion']->value;?>
+"<?php }?>" >
   </div>
   <div class="mb-3">
     <label  class="form-label">Marca</label>
-    <input name="marca" type="text" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['Marca']->value;?>
-" >
+    <input name="marca" type="text" class="form-control" <?php if ((isset($_smarty_tpl->tpl_vars['Nombre']->value))) {?>value="<?php echo $_smarty_tpl->tpl_vars['Marca']->value;?>
+"<?php }?>>
   </div>
   <div class="mb-3">
     <label  class="form-label">Precio</label>
-    <input name="precio" type="number" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['Precio']->value;?>
-" >
+    <input name="precio" type="number" class="form-control" <?php if ((isset($_smarty_tpl->tpl_vars['Nombre']->value))) {?>value="<?php echo $_smarty_tpl->tpl_vars['Precio']->value;?>
+"<?php }?> >
   </div>
   <select class="form-select" name="categoria" aria-label="Default select example" required>
     <?php

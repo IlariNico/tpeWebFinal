@@ -28,6 +28,7 @@ class controladorCategoria{
     }
 
     function agregarCategoria(){
+        session_start();
         $autHelper = new AutHelper();
         $autHelper->checkLoggedIn();
         if($this->verificarDatos()){
@@ -40,6 +41,7 @@ class controladorCategoria{
     }
 
     function modificarCategoria($id){
+        session_start();
         $autHelper = new AutHelper();
         $autHelper->checkLoggedIn();
         if($this->corroborarId($id)){
@@ -55,6 +57,7 @@ class controladorCategoria{
     }
 
     function borrarCategoria($id){
+        session_start();
         $autHelper = new AutHelper();
         $autHelper->checkLoggedIn();
         if($this->corroborarId($id)){
@@ -81,6 +84,7 @@ class controladorCategoria{
     }
     
     function mostrarCategorias(){
+        session_start();
         $categorias=$this->modelo->obtenerCategorias();
         $this->vista->mostrarCategorias($categorias);
     }

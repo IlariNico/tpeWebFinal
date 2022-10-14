@@ -20,12 +20,15 @@ class vistaCategoria{
     }
     
     function mostrarFormModificarCat($datos){
+        $this->smarty->assign('id',$datos->ID);
+        $this->smarty->assign('action',"modificar-cat");
         $this->smarty->assign('Nombre',$datos->nombre);
         $this->smarty->assign('Descripcion',$datos->descripcion);
         $this->smarty->display('formulariomodcat.tpl');
     }
 
     function mostrarFormIngreso(){
+        $this->smarty->assign('action',"agregar-cat");
         $this->smarty->assign('Nombre',"");
         $this->smarty->assign('Descripcion',"");
         $this->smarty->display('formulariomodcat.tpl');

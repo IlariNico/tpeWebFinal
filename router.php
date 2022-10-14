@@ -12,7 +12,7 @@ if (!empty($_GET['action'])) {
 // parsea la accion
 $params = explode('/', $action);
 
-session_start();
+
 $controladorCategorias = new controladorCategoria();
 $controladorProductos = new controladorProducto();
 
