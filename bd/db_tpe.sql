@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2022 a las 17:54:23
+-- Tiempo de generación: 15-10-2022 a las 23:50:12
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `db_tpe`
 --
+CREATE DATABASE IF NOT EXISTS `db_tpe` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `db_tpe`;
 
 -- --------------------------------------------------------
 
@@ -38,9 +40,9 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`ID`, `nombre`, `descripcion`) VALUES
-(1, 'Perifericos', 'los perifericos son todos los elementos que ayudan a interactuar con el pc!'),
+(1, 'Perifericos', 'los perifericos son todos los elementos que ayudan a interactuar con el pc!!!'),
 (3, 'Placas de video', 'las placas de video se usan para mejorar tu experiencia en videojuegos!'),
-(5, 'Procesadores', 'Son el cerebro de tu pc!!!');
+(5, 'Procesadores', 'Son el cerebro de tu pc!');
 
 -- --------------------------------------------------------
 
@@ -64,9 +66,9 @@ CREATE TABLE `productos` (
 
 INSERT INTO `productos` (`ID`, `nombre`, `imagen`, `descripcion`, `marca`, `precio`, `id_categoria`) VALUES
 (1, 'aorus', './img/mouse-gamer-rgb_40805_1.jpeg', 'un maus +/-', 'redragon', 999, 1),
-(6, 'Rtx 3090', './img/Placa-De-Video-GeForce-RTX-3090-24Gb-Asus-Rog-Strix-Gaming-Oc-Blanco_43111_1.jpeg', 'Una maquina del hardware una bestia autentica!', 'gygabyte', 999999, 3),
+(6, 'Rtx 3090', './img/Placa-De-Video-GeForce-RTX-3090-24Gb-Asus-Rog-Strix-Gaming-Oc-Blanco_43111_1.jpeg', 'Una maquina del hardware una bestia autentica!!!', 'gygabyte', 99999, 3),
 (7, 'Yama k222', './img/redragon-teclado-k550-yama-blanco-11-cbb5229492386a5c2716242352952486-1024-1024.jpg', 'Teclado mecanico de redragon con muchas luces!', 'redragon', 15000, 1),
-(8, 'Cloud flight ', './img/1558733874_236778llo.jpg', 'auriculares que son lo mejor lo mejor del mundo del gaming', 'Hyperx', 18000, 1),
+(8, 'Cloud flight ', './img/1558733874_236778llo.jpg', 'auriculares que son lo mejor lo mejor del mundo del gaming', 'Hyperx!', 18000, 1),
 (9, 'Harrow', './img/1534181389_ll.png', 'Joystick inalambrico de redragon que sirve para jugar a distancia', 'redragon', 10000, 1),
 (13, 'i7 7700', './img/BX80677I77700T_800.jpg', 'Es un procesador de alta gama de hace unos añitos', 'intel', 13000, 5);
 
@@ -120,13 +122,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -143,8 +145,10 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `productos`
   ADD CONSTRAINT `categorias_id_categoria_productos` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`ID`);
-COMMIT;
+--
+-- Base de datos: `phpmyadmin`
+--
+CREATE DATABASE IF NOT EXISTS `phpmyadmin` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `phpmyadmin`;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- --------------------------------------------------------
